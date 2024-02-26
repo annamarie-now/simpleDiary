@@ -33,13 +33,13 @@ const AddEntryPage: React.FC<AddEntryPageProps> = ({ onAddEntry }) => {
 
 return (
         <div className="addEntryPage_container">
-            <h2>Add Entry</h2>
+            <h2>ADD ENTRY</h2>
             <label>Date:</label>
-            <input type="text" value={newEntryDate} onChange={(e) => setNewEntryDate(e.target.value)} placeholder="yyyy-mm-dd" />
+            <input type="text" value={newEntryDate} onChange={(e) => setNewEntryDate(e.target.value)} placeholder="DD-MM-YYY" />
             <label>Entry:</label>
             <textarea rows={4} value={newEntry} onChange={(e) => setNewEntry(e.target.value)} placeholder="Write your entry..." />
             <label>Tags:</label>
-            <input type="text" value={newEntryTags} onChange={(e) => setNewEntryTags(e.target.value)} placeholder="tag1, tag2, tag3" />
+            <input type="text" value={newEntryTags} onChange={(e) => setNewEntryTags(e.target.value)} placeholder="Separate the tags with a comma..." />
             <button onClick={addEntry}>Add Entry</button>
         </div>
     );

@@ -27,18 +27,21 @@
 
   button {
     background-color: #dc3333;
-    color: #ffffff;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.2em;
+    padding: 12px 20px;
     border: none;
-    align-items: center;
-    border-radius: 6px;
-    height: 42px;
-    padding-left: 15px;
-    padding-right: 15px;
+    border-radius: 4px;
+    cursor: pointer;
 
-    &:hover {
-      background-color: #f36b6b;
+    a{
+      font-family: 'Ubuntu', sans-serif;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+
     }
+    &:hover {
+      background-color: #771717;
+    }
+
   }
 }
