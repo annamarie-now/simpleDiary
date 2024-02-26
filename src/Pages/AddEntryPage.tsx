@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Entry } from '../Entry';
+import '../styles/AddEntryPage.scss';
+
 
 interface AddEntryPageProps {
     onAddEntry: (entry: Entry) => void;
@@ -30,7 +32,7 @@ const AddEntryPage: React.FC<AddEntryPageProps> = ({ onAddEntry }) => {
 
 
 return (
-        <div>
+        <div className="addEntryPage_container">
             <h2>Add Entry</h2>
             <label>Date:</label>
             <input type="text" value={newEntryDate} onChange={(e) => setNewEntryDate(e.target.value)} placeholder="yyyy-mm-dd" />

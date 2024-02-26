@@ -4,13 +4,14 @@ import AddEntryPage from './Pages/AddEntryPage';
 import DiaryListPage from './Pages/DiaryListPage';
 import HomePage from './Pages/HomePage';
 import { Entry } from './Entry';
+import './styles/App.scss';
 
 const App: React.FC = () => {
     const [entries, setEntries] = useState<Entry[]>([]);
 
     return (
         <Router>
-            <div>
+            <div className="app_container">
                 <nav>
                     <ul>
                         <li>
@@ -20,7 +21,7 @@ const App: React.FC = () => {
                             <Link to="/addDiaryEntry">Add a diary entry</Link>
                         </li>
                         <li>
-                            <Link to="/diaryEntryList">My diary entries</Link>
+                            <Link to="/diaryEntryList">View my diary entries</Link>
                         </li>
                     </ul>
                 </nav>

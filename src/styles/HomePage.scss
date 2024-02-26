@@ -1,17 +1,44 @@
+
 .homePage_container {
-  background-color: blue; /* Set a white background */
-  padding: 20px;
   text-align: center;
+  background-image: url("../assets/gijs-coolen-CRmcBeINxtg-unsplash.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position:center;
+  height: 100vh;
 
   h1 {
-    font-size: 2rem;
-    color: #333; /* Dark text color */
-    margin-bottom: 20px;
-    font-family: Ubuntu;
+    font-family: 'Kanit', sans-serif;
+    color: #ffffff;
+    font-size: 3em;
+    padding-top: 100px;
+    padding-bottom: 20px;
   }
 
   p {
-    font-size: 1rem;
-    color: #666; /* Slightly darker text color */
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+
+  }
+
+  button {
+    background-color: #dc3333;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border: none;
+    align-items: center;
+    border-radius: 6px;
+    height: 42px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &:hover {
+      background-color: #f36b6b;
+    }
   }
 }

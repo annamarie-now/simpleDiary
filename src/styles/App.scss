@@ -1,0 +1,30 @@
+.app_container {
+  height: 100%;
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      background-color: #2b3036;
+      justify-content: space-around;
+      align-items: center;
+      height: 50px;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #fff;
+          padding: 10px;
+          transition: color 0.3s ease;
+          font-family: 'Ubuntu', sans-serif;
+          font-weight: 100;
+          &:hover {
+            color: #ffcc00;
+          }
+        }
+      }
+    }
+  }
+}
