@@ -14,7 +14,7 @@ const App: React.FC = () => {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/HomePage">Home</Link>
                         </li>
                         <li>
                             <Link to="/addDiaryEntry">Add a diary entry</Link>
@@ -35,7 +35,7 @@ const App: React.FC = () => {
                         element={<DiaryListPage entries={entries} onDeleteEntry={(id) => setEntries(entries.filter((entry) => entry.id !== id))} />}
                     />
                     <Route
-                        path="/home"
+                        path="/homePage"
                         element={<HomePage />}
                     />
                 </Routes>
