@@ -23,9 +23,9 @@ const DiaryListPage: React.FC<DiaryListPageProps> = ({ entries, onDeleteEntry })
         : entries;
 
     const sortedEntries = [...filteredEntries].sort((a, b) => {
-        const dateA = new Date(a.date).getTime();
-        const dateB = new Date(b.date).getTime();
-        return dateA - dateB;
+        const dateA = new Date(a.date).toISOString().split('T')[0];
+        const dateB = new Date(b.date).toISOString().split('T')[0];
+        return dateB.localeCompare(dateA);
     });
 
     const deleteEntryHandler = (id: number) => {
