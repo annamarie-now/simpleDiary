@@ -15,7 +15,7 @@ const App: React.FC = () => {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/addDiaryEntry">Add a diary entry</Link>
+                            <Link to="/addEntry">Add a diary entry</Link>
                         </li>
                         <li>
                             <Link to="/diaryList">View my diary entries</Link>
@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
                 <Routes>
                     <Route
-                        path="/addDiaryEntry"
+                        path="/addEntry"
                         element={<AddEntryPage onAddEntry={(newEntry) => setEntries([...entries, newEntry])} />}
                     />
                     <Route

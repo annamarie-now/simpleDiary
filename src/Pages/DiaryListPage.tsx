@@ -1,8 +1,6 @@
-// src/Pages/DiaryListPage.tsx
 import React, { useState } from 'react';
 import { Entry } from '../Entry';
 import '../styles/DiaryListPage.scss';
-
 
 interface DiaryListPageProps {
     entries: Entry[];
@@ -24,6 +22,12 @@ const DiaryListPage: React.FC<DiaryListPageProps> = ({ entries, onDeleteEntry })
         ? entries.filter((entry) => entry.tags.includes(tagFilter))
         : entries;
 
+    const sortedEntries = [...filteredEntries].sort((a, b) => {
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
+        return dateA - dateB;
+    });
+
     const deleteEntryHandler = (id: number) => {
         onDeleteEntry(id);
     };
@@ -32,10 +36,15 @@ const DiaryListPage: React.FC<DiaryListPageProps> = ({ entries, onDeleteEntry })
         <div className="diaryListPage_container">
             <h1>MY DIARY LIST</h1>
             <div>
-                <input type="text" placeholder="Filter entries by tag" value={tagFilter} onChange={(e) => filterEntriesByTag(e.target.value)} />
+                <input
+                    type="text"
+                    placeholder="Filter entries by tag"
+                    value={tagFilter}
+                    onChange={(e) => filterEntriesByTag(e.target.value)}
+                />
                 <button onClick={resetEntries}>Reset filter</button>
             </div>
-            {filteredEntries.map((entry) => (
+            {sortedEntries.map((entry) => (
                 <div className="diaryListPage_entry" key={entry.id}>
                     <h3>Date:</h3>
                     <p>{entry.date}</p>
