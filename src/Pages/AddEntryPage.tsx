@@ -19,14 +19,16 @@ const AddEntryPage: React.FC<AddEntryPageProps> = ({ onAddEntry }) => {
             const entryTags = newEntryTags.trim() !== '' ? newEntryTags.split(',').map((tag) => tag.trim()) : [];
             const currentDate = newEntryDate || new Date().toLocaleDateString();
 
+            const newId = Date.now();
+
             onAddEntry({
-                id: 0, // Assigning 0 for now, id will be generated in the App component
+                id: newId,
                 date: currentDate,
                 content: newEntry,
                 tags: entryTags,
             });
 
-            navigate('/diaryEntryList');
+            navigate('/diaryList');
         }
     };
 

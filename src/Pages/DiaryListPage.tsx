@@ -1,5 +1,9 @@
+// src/Pages/DiaryListPage.tsx
 import React, { useState } from 'react';
 import { Entry } from '../Entry';
+import '../styles/DiaryListPage.scss';
+
+
 interface DiaryListPageProps {
     entries: Entry[];
     onDeleteEntry: (id: number) => void;
@@ -25,18 +29,20 @@ const DiaryListPage: React.FC<DiaryListPageProps> = ({ entries, onDeleteEntry })
     };
 
     return (
-        <div>
-            <h2>Diary List</h2>
+        <div className="diaryListPage_container">
+            <h1>MY DIARY LIST</h1>
             <div>
-                <h2>Filter Entries by Tag</h2>
-                <input type="text" placeholder="Enter tag" onChange={(e) => filterEntriesByTag(e.target.value)} />
-                <button onClick={resetEntries}>Reset Filter</button>
+                <input type="text" placeholder="Filter entries by tag" value={tagFilter} onChange={(e) => filterEntriesByTag(e.target.value)} />
+                <button onClick={resetEntries}>Reset filter</button>
             </div>
             {filteredEntries.map((entry) => (
-                <div key={entry.id}>
+                <div className="diaryListPage_entry" key={entry.id}>
+                    <h3>Date:</h3>
                     <p>{entry.date}</p>
+                    <h3>Diary entry:</h3>
                     <p>{entry.content}</p>
-                    <p>Tags: {entry.tags.join(', ')}</p>
+                    <h3>Tags:</h3>
+                    <p>{entry.tags.join(', ')}</p>
                     <button onClick={() => deleteEntryHandler(entry.id)}>Delete Entry</button>
                 </div>
             ))}

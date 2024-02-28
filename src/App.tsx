@@ -15,13 +15,10 @@ const App: React.FC = () => {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/HomePage">Home</Link>
-                        </li>
-                        <li>
                             <Link to="/addDiaryEntry">Add a diary entry</Link>
                         </li>
                         <li>
-                            <Link to="/diaryEntryList">View my diary entries</Link>
+                            <Link to="/diaryList">View my diary entries</Link>
                         </li>
                     </ul>
                 </nav>
@@ -32,11 +29,11 @@ const App: React.FC = () => {
                         element={<AddEntryPage onAddEntry={(newEntry) => setEntries([...entries, newEntry])} />}
                     />
                     <Route
-                        path="/diaryEntryList"
+                        path="/diaryList"
                         element={<DiaryListPage entries={entries} onDeleteEntry={(id) => setEntries(entries.filter((entry) => entry.id !== id))} />}
                     />
                     <Route
-                        path="/homePage"
+                        path="/"
                         element={<HomePage />}
                     />
                 </Routes>
